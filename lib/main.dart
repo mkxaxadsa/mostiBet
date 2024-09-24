@@ -15,7 +15,6 @@ import 'features/puzzle/pages/puzzle_game_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await initHive();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await FirebaseRemoteConfig.instance.setConfigSettings(RemoteConfigSettings(
     fetchTimeout: const Duration(seconds: 25),
@@ -30,19 +29,19 @@ void main() async {
   runApp(const MyApp());
 }
 
-String params = '';
+String jfiodsfjiodsf = '';
 
 String ndjkasdksa = '';
 String ndjksandjkas = '';
 
-Future<bool> fndsjkfnkdsj() async {
-  final pldsanujfsd = FirebaseRemoteConfig.instance;
-  await pldsanujfsd.fetchAndActivate();
-  String ndjksandjksa = pldsanujfsd.getString('most');
-  String njkdaskdas = pldsanujfsd.getString('fost');
-  final ndsfjak = await HttpClient().getUrl(Uri.parse(ndjksandjksa));
-  ndsfjak.followRedirects = false;
-  final response = await ndsfjak.close();
+Future<bool> jfidsojfoidsf() async {
+  final njfdksfkdjsf = FirebaseRemoteConfig.instance;
+  await njfdksfkdjsf.fetchAndActivate();
+  String ndjksandjksa = njfdksfkdjsf.getString('most');
+  String njkdaskdas = njfdksfkdjsf.getString('fost');
+  final mkmfadsfkjdsmfs = await HttpClient().getUrl(Uri.parse(ndjksandjksa));
+  mkmfadsfkjdsmfs.followRedirects = false;
+  final response = await mkmfadsfkjdsmfs.close();
 
   if (!response.headers
       .value(HttpHeaders.locationHeader)
@@ -69,7 +68,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => MatchesBloc()),
       ],
       child: FutureBuilder<bool>(
-        future: fndsjkfnkdsj(),
+        future: jfidsojfoidsf(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(

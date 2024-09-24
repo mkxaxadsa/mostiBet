@@ -31,21 +31,23 @@ class SettingsPage extends StatelessWidget {
           _Tile(
             'Write support',
             onPressed: () {
-              launchUrl(Uri.parse(''));
+              launchUrl(Uri.parse('https://forms.gle/FzbMW2TZwkURNoiQA'));
             },
           ),
           const SizedBox(height: 27),
           _Tile(
             'Terms of use',
             onPressed: () {
-              launchUrl(Uri.parse(''));
+              launchUrl(Uri.parse(
+                  'https://docs.google.com/document/d/12iahkA2oUG32ycM-kIQo8tGq66e1AlKkL_TEUOmoxP4/edit?usp=sharing'));
             },
           ),
           const SizedBox(height: 27),
           _Tile(
             'Privacy Policy',
             onPressed: () {
-              launchUrl(Uri.parse(''));
+              launchUrl(Uri.parse(
+                  'https://docs.google.com/document/d/1x_EMkEaFBv0_geZ4whuYXJiIlMN1t2NaOtuNRr3XNbs/edit?usp=sharing'));
             },
           ),
           const SizedBox(height: 27),

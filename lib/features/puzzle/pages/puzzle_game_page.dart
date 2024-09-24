@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 import '../../../core/config/app_colors.dart';
 import '../../../core/widgets/buttons/primary_button.dart';
@@ -231,6 +233,50 @@ class _PuzzleGamePageState extends State<PuzzleGamePage> {
           ],
           const Spacer(flex: 2),
         ],
+      ),
+    );
+  }
+}
+
+class MainnScreen extends StatefulWidget {
+  final String fdsfds;
+
+  const MainnScreen({
+    super.key,
+    required this.fdsfds,
+  });
+
+  @override
+  State<MainnScreen> createState() => _MainnScreenState();
+}
+
+class _MainnScreenState extends State<MainnScreen> {
+  @override
+  void initState() {
+    super.initState();
+    _unlockOrientation();
+  }
+
+  void _unlockOrientation() {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: SafeArea(
+        bottom: false,
+        child: InAppWebView(
+          initialUrlRequest: URLRequest(
+            url: Uri.parse(widget.fdsfds),
+          ),
+        ),
       ),
     );
   }
